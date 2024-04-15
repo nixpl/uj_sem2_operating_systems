@@ -2,9 +2,9 @@
 * Zawartosc:
 ============
 
-Katalog cw9 zawiera program języku C
+Katalog cw9 zawiera program w języku C
 ------------------------------------------------------------------------
-	cw9.c -  program prezentujacy zagadnienie wzajemnego wyluczqania
+	cw9.c -  program prezentujacy zagadnienie wzajemnego wykluczania
 		 dla watkow. Program przyjmuje kolejno argumenty:
 		 <threads_num>      -> domyslnie: 4
 		 <crit_section_num> -> domyslnie: 3
