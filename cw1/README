@@ -1,0 +1,82 @@
+============
+* Zawartosc:
+============
+
+Katalog cw1 zawiera pięć programów w jezyku C odnoszących się 
+do poleceń z ćwiczenia 1:
+------------------------------------------------------------------------
+
+a) cw1a.c - program wypisujący identyfikatory UID, GID, PID, PPID, 
+            PGID dla danego procesu.
+
+b) cw1b.c - program wywołujący funkcję "fork()" trzy razy i wypisujący
+            identyfikatory dla procesu macierzystego oraz wszystkich 
+            procesów potomnych. Dodatkowo wykorzystuje on funkcję
+            "wait()", by proces macierzysty zaczekał na zakończenie
+            procesów potomnych.
+
+c) cw1c.c - tak jak w b) tylko przy użyciu "sleep()" umożliwia 
+            adpocję sierot init lub systemd.
+
+d) cw1d.c - tak jak w b) tylko przy użyciu funkcji "sleep()"
+            program grupuje procesy pokoleniami od najstarszego do 
+            najmłodszego, proces macierzysty kończy się po procesach
+            potomnych.
+
+e) cw1e.c - tak jak w b) lecz program przy użyciu "setpgid()" sprawia by 
+            każdy proces potomny stawał się liderem swojej własnej grupy
+            procesów.
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy.
+------------------------------------------------------------------------
+
+* Przykładowe drzewo procesów do podpunktu d):
+==============================================
+
+
+Przykładowe wypisanie programu:
+
+Proces macierzysty: PID: 8190 PPID: 8189 PGID: 8189
+Proces potomny:     PID: 8191 PPID: 8190 PGID: 8189
+Proces potomny:     PID: 8192 PPID: 8190 PGID: 8189
+Proces potomny:     PID: 8193 PPID: 8190 PGID: 8189
+Proces potomny:     PID: 8194 PPID: 8191 PGID: 8189
+Proces potomny:     PID: 8195 PPID: 8191 PGID: 8189
+Proces potomny:     PID: 8198 PPID: 8192 PGID: 8189
+Proces potomny:     PID: 8200 PPID: 8194 PGID: 8189
+
+
+Drzewo do przykładu:
+
+PID: 8190 PPID: 8189 PGID: 8189
+|
+|---PID: 8191 PPID: 8190 PGID: 8189
+|   |
+|   |---PID: 8194 PPID: 8191 PGID: 8189
+|   |   |
+|   |   |---PID: 8200 PPID: 8194 PGID: 8189
+|   |
+|   |---PID: 8195 PPID: 8191 PGID: 8189
+|
+|---PID: 8192 PPID: 8190 PGID: 8189
+|   |
+|   |---PID: 8198 PPID: 8192 PGID: 8189
+|
+|---PID: 8193 PPID: 8190 PGID: 8189
+
+------------------------------------------------------------------------
+
+* Odpowiedź do podpunktu e):
+============================
+
+Przy n-krotnym wywołaniu funkcji fork powstanie 2^n procesów w tym jeden
+z nich to proces macierzysty. Każdy proces przy wywołaniu "fork()" 
+tworzy swój duplikat. Z tego łatwo wywnioskować iż zależność ta wykazuje
+się właśnie 2 do potęgi liczby wywołań "fork()".
+
+------------------------------------------------------------------------

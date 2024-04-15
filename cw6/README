@@ -1,0 +1,33 @@
+============
+* Zawartosc:
+============
+
+Katalog cw6 zawiera dwa programy w języku C oraz autorska biblioteke
+------------------------------------------------------------------------
+
+	multipler.c - program glowny, który w procesach pomonych przy
+		      pomocy execlp() odpala uruchamia exclusion.c.
+		      Program ten przyjmuje kolejno argumenty:
+		      <program_name>  -> w makefile exclusion.x
+                      <num_processes> -> w makefile domyslnie 3
+                      <num_sections>  -> w makefile domyslnie 4
+	exclusion.c - program uruchamiany przez multipler.c, przyjmuje
+		      kolejno argumenty:
+		      <num_sections> <semaphore_name>
+	semaphore_fun.h - plik naglowkowy z funkcjami semaforowymi
+	semaphore_fun.c - definicje funkcji semaforowych
+	semaphore_fun.a - skompilowana biblioteka
+ 
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy. 
+------------------------------------------------------------------------
+
+* Odpowiedź na zadane pytanie:
+==============================
+Bez uzycia sekcji krytycznej wartosc numeru w pliku wynosi 0.
+

@@ -1,0 +1,19 @@
+============
+* Zawartosc:
+============
+
+Katalog cw9 zawiera program języku C
+------------------------------------------------------------------------
+	cw9.c -  program prezentujacy zagadnienie wzajemnego wyluczqania
+		 dla watkow. Program przyjmuje kolejno argumenty:
+		 <threads_num>      -> domyslnie: 4
+		 <crit_section_num> -> domyslnie: 3
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy. 
+------------------------------------------------------------------------
+

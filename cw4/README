@@ -1,0 +1,21 @@
+============
+* Zawartosc:
+============
+
+Katalog cw4 zawiera program w języku C oraz plik .txt
+------------------------------------------------------------------------
+
+    cw4.c  -  Program realizujący problem "Producenta i konsumenta"
+	      Producent pobiera surowiec w porcjach z pliku surowiec.txt
+	      i wstawia te porcje jako towar do potoku. Konsument zaś
+	      pobiera innymi porcjami towar, który umieszcza w pliku
+	      uprzednio zrobionym o nazwie towar.txt 
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy. 
+------------------------------------------------------------------------
+

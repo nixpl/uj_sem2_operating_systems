@@ -1,0 +1,54 @@
+============
+* Zawartosc:
+============
+
+Katalog cw7 zawiera trzy programy w języku C, dwie autorskie biblioteki
+oraz pliki wejscia i wyjscia
+------------------------------------------------------------------------
+
+	cw7.c - plik glowny ktory przy pomocy execlpt wywoluje producent.x
+		oraz konsument.x jako procesy potomne. Program ten na poczatku
+		zajmuje sie tworzeniem semaforow i pamieci dzielonej. Program 
+		spodziewa sie kolejno nastepujacych argumentow:
+		<producent_prog_name> -> domyslnie producent.c
+		<consument_prog_name> -> domyslnie konsument.c
+		<input_file_name>     -> domyslnie surowiec.txt
+		<output_file_name>    -> domyslnie towar.txt
+
+	producent.c - program odczytujacy dane z pliku surowiec.txt,
+		      a nastpenie procjami umieszcza je w buforze pamieci
+		      dzielonej. Program spodziewa sie kolejno nastepujacych 
+		      argumentow:
+		      <input_file_name>          -> domyslnie surowiec.txt
+		      <producent_semaphore_name> -> domyslnie prod_semaphore
+		      <consument_semaphore_name> -> domyslnie cons_semaphore
+                      <memory_descriptor_name>   -> my_memory
+
+
+	konsument.c - program zapisujacy porcjami dane odczytane z pamieci 
+		      dzielonej do pliku towar.txt. Program spodziewa sie 
+		      kolejno nastepujacych argumentow:
+		      <output_file_name>         -> domyslnie towar.txt
+		      <producent_semaphore_name> -> domyslnie prod_semaphore
+		      <consument_semaphore_name> -> domyslnie cons_semaphore
+                      <memory_descriptor_name>   -> my_memory
+
+
+	semaphore_fun.h - plik naglowkowy z funkcjami semaforowymi
+	semaphore_fun.c - definicje funkcji semaforowych
+	shared_memory_fun.h - plik naglowkowy z funkcjami pamieci dzielonej
+	shared_memory_fun.c - definicje funkcji dla pamieci dzielonej
+
+	surowiec.txt - plik odczytywany przez producenta
+	towar.txt - plik w którym konsument zamieszcza dane
+
+ 
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy. 
+------------------------------------------------------------------------
+

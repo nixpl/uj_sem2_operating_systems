@@ -1,0 +1,28 @@
+============
+* Zawartosc:
+============
+
+Katalog cw8 zawiera dwa programy w języku C oraz autorska biblioteke
+------------------------------------------------------------------------
+	serwer.c - program odbiera jedno z czterech dzialan na liczbach  
+                   clakowitych (+,-,*,/), ktore jest wyslane przez
+		   program klient.c. Nastepnie oblicza i przesyla
+		   z powrotem do klienta wynik.
+
+	klient.c - program, w ktorym podajemy na wejsciu dzialanie
+		   (+,-,*,/) w sposob <liczba><operator><liczba>
+		   dzialnie to zostaje wyslane do "serwera" i po chwili
+		   w konsoli otrzymujemy wynik.
+
+	msg_q_fun.h - plik naglowkowy z funkcjami kolejek komunikatow
+	msg_q_fun.c - definicje funkcji kolejek komunikatow
+ 
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy. 
+------------------------------------------------------------------------
+

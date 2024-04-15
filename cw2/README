@@ -1,0 +1,36 @@
+============
+* Zawartosc:
+============
+
+Katalog cw2 zawiera dwa programy w jezyku C.
+------------------------------------------------------------------------
+
+    cw2.c - program wywołujący funkcję "fork()" trzy razy i wypisujący
+            identyfikatory dla procesu macierzystego oraz procesów 
+            potomnych przy pomocy execlp() odnoszącego się do programu 
+            wypisz.c. Dodatkowo wykorzystuje on funkcję
+            "wait()", by proces macierzysty zaczekał na zakończenie
+            procesów potomnych.
+
+    wypisz.c - program wywoływany przez funkcję execlp() w programie
+               głównym cw2.c służący do wypisanie procesów potomnych.
+
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy.
+------------------------------------------------------------------------
+
+* Odpowiedź na pytanie:
+==============================================
+
+Przy n-krotnym wywołaniu fork() powstanie n procesów potomnych,
+gdy do ich wypisania użyjemy funkcji execlp(). Spowodowane jest to
+faktem, iż execlp() uruchamia nowy proces lecz ten proces nie ma
+procesów potomnych jak to miało miejsce przy bezpośrednim wywoływaniu
+przy użyciu fork(), który potęgował ilość procesów.
+
+------------------------------------------------------------------------

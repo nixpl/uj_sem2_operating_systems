@@ -1,0 +1,31 @@
+============
+* Zawartosc:
+============
+
+Katalog cw5 zawiera trzy programy w języku C oraz plik .txt
+------------------------------------------------------------------------
+
+    cw5a.c   -    Program uruchamiający w dwóch procesach potomnych kolejno
+		  programy producent.c oraz konsument.c. Przyjmuje on trzy
+		  argumenty: nazwa_fifo plik_danych plik_wyjscia
+
+    producent.c - Program czytający porcjami z podanego pliku umieszcza
+		  dane w podanym potoku. Przymuje on argumenty kolejno:
+		  plik_danych nazwa_fifo
+
+    konsument.c - Program odczytujący z podanego potoku porcjami dane, 
+		  które umieszcza w podanym pliku. Przyjmuje on kolejno 
+		  argumenty:
+		  plik_wyjscia nazwa_fifo
+
+    surowiec.txt - Przykładowy plik_danych
+
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy. 
+------------------------------------------------------------------------
+

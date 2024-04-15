@@ -1,0 +1,50 @@
+============
+* Zawartosc:
+============
+
+Katalog cw3 zawiera cztery programy w jezyku C (w tym trzy główne).
+------------------------------------------------------------------------
+
+    cw3a.c - Program do obslugi sygnalów. Przymuje dwa argumenty 
+	     ze standardowego wejścia kolejno: 
+	     	tryb_pracy 
+	     	    możliwe wybory:
+	     	        1 -> operacja domyslna dla sygnalu
+	     		2 -> ignorowanie sygnalu
+	     		3 -> przechwycenie i obsluga sygnalu
+             	numer_sygnalu
+		    możliwe wybory:
+			wszystkie możliwe z wyjątkiem id 9 i 19
+	     
+    cw3b.c - Program, który przy użyciu funkcji execlp() w procesie
+	     potomnym uruchamia program cw3a.c. W procesie macierzystym
+	     wysylany jest sygnal do procesu realizującego program
+	     cw3a.c.
+             Przyjmuje trzy argumenty ze standardowego wejścia kolejno:
+	     	nazwa_programu.x  -> W Makefile jest to cw3a.x 
+	     	tryb_pracy        -> tj. cw3a.c
+	     	numer_sygnalu     -> tj. cw3a.c
+
+    cw3c.c - Program, uruchamiający w procesie potomnym program 
+	     cw3c_childs.c, który odpowiedzialny jest za tworzenie
+	     procesów potomnych, w których wywoływany jest program
+	     cw3a.c. Do programu ze standardowego wejścia przyjmowane
+	     są cztery argumenty kolejno:
+	     	nazwa_programu1.x -> w Makefile jest to cw3c_childs.x
+	     	nazwa_programu.x  -> W Makefile jest to cw3a.x
+	     	tryb_pracy        -> tj. cw3a.c
+	     	numer_sygnalu     -> tj. cw3a.c
+
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile. Po wpisaniu do konsoli komendy "make" 
+ukaże się legenda opisująca możliwe komendy. Makefile zawiera domyślnie
+podane dane do włączenia programów, które tego wymagają.
+  tryb_pracy    -> 3
+  numer_syganlu -> 2
+
+------------------------------------------------------------------------
+
